@@ -1,6 +1,8 @@
+package ru.clevertec;
+
 import org.junit.jupiter.api.Test;
 import ru.clevertec.deserializer.JsonDeserializer;
-import test_models.Car;
+import ru.clevertec.test_models.Car;
 
 import static org.junit.jupiter.api.Assertions.*;
 

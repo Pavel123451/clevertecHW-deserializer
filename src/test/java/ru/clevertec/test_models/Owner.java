@@ -1,4 +1,4 @@
-package test_models;
+package ru.clevertec.test_models;
 
 import ru.clevertec.annotation.JsonField;
 
