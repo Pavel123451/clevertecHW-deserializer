@@ -8,7 +8,7 @@ public class IntegerTypeHandler implements JsonTypeHandler {
 
     @Override
     public boolean canHandle(Class<?> fieldType, String value) {
-        return fieldType == int.class || fieldType == Integer.class;
+        return Integer.TYPE.equals(fieldType);
     }
 
     @Override

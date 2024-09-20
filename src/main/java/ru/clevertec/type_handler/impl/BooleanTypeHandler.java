@@ -8,7 +8,7 @@ public class BooleanTypeHandler implements JsonTypeHandler {
 
     @Override
     public boolean canHandle(Class<?> fieldType, String value) {
-        return fieldType == boolean.class || fieldType == Boolean.class;
+        return Boolean.TYPE.equals(fieldType);
     }
 
     @Override
