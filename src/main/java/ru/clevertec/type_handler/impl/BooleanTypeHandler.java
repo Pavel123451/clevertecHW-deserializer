@@ -1,0 +1,18 @@
+package ru.clevertec.type_handler.impl;
+
+import ru.clevertec.type_handler.JsonTypeHandler;
+
+import java.lang.reflect.Field;
+
+public class BooleanTypeHandler implements JsonTypeHandler {
+
+    @Override
+    public boolean canHandle(Class<?> fieldType, String value) {
+        return Boolean.TYPE.equals(fieldType);
+    }
+
+    @Override
+    public Object handle(Class<?> fieldType, String value, Field field) {
+        return Boolean.parseBoolean(value);
+    }
+}

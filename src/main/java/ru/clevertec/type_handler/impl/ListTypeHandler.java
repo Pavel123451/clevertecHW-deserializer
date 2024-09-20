@@ -1,0 +1,22 @@
+package ru.clevertec.type_handler.impl;
+
+import ru.clevertec.deserializer.JsonDeserializer;
+import ru.clevertec.service.JsonConverter;
+import ru.clevertec.type_handler.JsonTypeHandler;
+
+import java.lang.reflect.Field;
+import java.util.List;
+
+public class ListTypeHandler implements JsonTypeHandler {
+
+    @Override
+    public boolean canHandle(Class<?> fieldType, String value) {
+        return fieldType.isArray() || List.class.isAssignableFrom(fieldType);
+    }
+
+    @Override
+    public Object handle(Class<?> fieldType, String value, Field field) {
+        JsonConverter jsonConverter = new JsonConverter();
+        return jsonConverter.convertList(value, field, JsonDeserializer::deserialize);
+    }
+}
